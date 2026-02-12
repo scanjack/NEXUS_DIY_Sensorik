@@ -91,6 +91,38 @@ Atmosphärische Dämpfung (ISO 9613-1):
 
 **Gesamt: ~250€** (vs. kommerzielle Systeme: 3.000–10.000€)
 
+graph TD
+    subgraph "Datenerfassung (Feld)"
+        A[NEXUS Sensorik] -->|Umweltdaten CSV| B(Data Storage)
+        C[TeensyBat] -->|Audio WAV| B
+    end
+
+    subgraph "Phase 1: Vorverarbeitung & KI"
+        B --> D[wav_teiler: Segmentierung]
+        D --> E[BatDetect2: KI-Klassifizierung]
+    end
+
+    subgraph "Phase 2: Validierung & Zeit-Sync"
+        E --> F[batch-validator: Frequenzprüfung]
+        F --> G[bat_autostart: Zeitstempel & Astro-Daten]
+    end
+
+    subgraph "Phase 3: NEXUS Integration"
+        G --> H[nexus_guild_analyzer: ISO 9613-1 Reichweite]
+        B --> H
+        H --> I[final_3way_merge: Umwelt + Akustik + KI]
+    end
+
+    subgraph "Phase 4: Visualisierung"
+        I --> J[Activity & Pareto Charts]
+        I --> K[Spektrogramme mit Overlays]
+        I --> L[KML-Export: Google Earth]
+    end
+
+    style A fill:#f96,stroke:#333
+    style C fill:#f96,stroke:#333
+    style L fill:#9f9,stroke:#333
+
 ---
 
 ## 💻 Software Features
