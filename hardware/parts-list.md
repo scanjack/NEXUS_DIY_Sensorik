@@ -96,9 +96,10 @@ SCK  → GPIO7  (Standard SPI)
 
 ### Digital Inputs (Interrupts)
 ```
-Wind Speed (Anemometer) → D0 (GPIO1)  - FALLING Interrupt
-Rain Gauge              → D3 (GPIO3)  - FALLING Interrupt
-Wind Direction (ADC)    → D1 (GPIO2)  - Analog Read (optional)
+Wind Speed (Anemometer) → D0 (GPIO1)
+Wind Direction (ADC)    → D1 (GPIO2)
+SD-Karte CS             → D2 (GPIO3)
+Rain Gauge              → D3 (GPIO4)
 ```
 
 ### PCF8574 Expander (Rotary Encoder)
