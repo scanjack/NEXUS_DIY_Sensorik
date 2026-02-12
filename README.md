@@ -91,6 +91,7 @@ Atmosphärische Dämpfung (ISO 9613-1):
 
 **Gesamt: ~250€** (vs. kommerzielle Systeme: 3.000–10.000€)
 
+```mermaid
 graph TD
     subgraph "Datenerfassung (Feld)"
         A[NEXUS Sensorik] -->|Umweltdaten CSV| B(Data Storage)
@@ -122,6 +123,7 @@ graph TD
     style A fill:#f96,stroke:#333
     style C fill:#f96,stroke:#333
     style L fill:#9f9,stroke:#333
+'''
 
 ---
 
