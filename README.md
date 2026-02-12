@@ -122,6 +122,7 @@ graph TD
     style A fill:#f96,stroke:#333
     style C fill:#f96,stroke:#333
     style L fill:#9f9,stroke:#333
+
 ---
 
 ## 💻 Software Features
