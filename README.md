@@ -139,22 +139,18 @@ graph TD
 
 ## 📁 Repository-Struktur
 
-```
+Damit du dich im NEXUS-System so schnell zurechtfindest wie in einem gut sortierten Werkzeugschrank:
+
+```text
 NEXUS_DIY_Sensorik/
-├── README.md                  # Diese Datei
-├── LICENSE                    # CC BY-NC 4.0
-├── software/
-│   └── main.cpp               # NEXUS v4.3.1 Core-Code
-├── hardware/
-│   ├── parts-list.md          # Komponenten & Bezugsquellen
-│   ├── wiring-diagram.png     # Verkabelung (coming soon)
-│   └── assembly-guide.md      # Aufbau-Anleitung (coming soon)
-├── docs/
-│   ├── methodology.md         # Wissenschaftliche Methodik
-│   ├── iso-9613-1.md          # Dämpfungskoeffizient-Erklärung
-│   └── validation-plan.md     # Feldtest-Protokoll (Frühjahr 2026)
-└── data/
-    └── example-dataset/       # Beispiel-Daten (coming soon)
+├── docs/                       # Wissenschaftliche Grundlagen (ISO 9613-1)
+├── hardware/                   # Stücklisten, Sensoren und Gehäuse-Pläne
+└── software/
+    ├── nexus_esp32_firmware/   # C++ Code für den Seeed XIAO (Sensor-Logik)
+    └── python_scripts/         # Die Analyse-Pipeline (PC-Seite)
+        ├── requirements.txt    # Notwendige Python-Pakete
+        ├── README.md           # Bedienungsanleitung für die Pipeline
+        └── nexus_pipeline_commander.py  # Das "Gehirn" der Auswertung
 ```
 
 ---
@@ -166,7 +162,7 @@ NEXUS_DIY_Sensorik/
 - [x] **v3.0** - GPS-Synchronisation
 - [x] **v4.0** - Wind & Regen Sensoren
 - [x] **v4.3.1** - ISO 9613-1 Dämpfungskoeffizient, WiFi-Interface
-- [ ] **v5.0** - Feldvalidierung (geplant: März–Mai 2026, Raum Paderborn)
+- [ ] **v5.0** - Feldvalidierung (geplant: März–Oktober 2026, Raum Paderborn)
 - [ ] **v6.0** - TeensyBat-Integration (Zeitstempel-Sync)
 - [ ] **v7.0** - BatDetect2-Pipeline (automatische Analyse)
 - [ ] **v8.0** - Peer-Review-Paper (Methodology & Validation)
@@ -195,12 +191,6 @@ NEXUS_DIY_Sensorik/
 > 
 > — Jochen Roth, Februar 2026
 
-**Open Science bedeutet:**
-- Transparente Entwicklung
-- Reproduzierbare Methodik
-- Prioritätsnachweis durch GitHub-Commits
-- Community-basierte Verbesserung
-
 ---
 
 ## 📖 Wissenschaftliche Grundlage
@@ -214,11 +204,6 @@ NEXUS implementiert die ISO 9613-1 Norm zur Berechnung der atmosphärischen Däm
 * **Detektionsreichweiten** artspezifisch variieren und ohne Korrektur nicht vergleichbar sind.
 
 👉 **[Hier findest du die ausführliche wissenschaftliche Erklärung zur ISO 9613-1 im NEXUS-Projekt](docs/iso-9613-1.md)**
-
-**Praxis-Beispiel:**
-Ein Ruf von *Pipistrellus pipistrellus* (55 kHz) wird bei 15°C und 60% rH um ca. **0,6 dB/m** gedämpft. Nach nur 10 Metern bedeutet das bereits einen **Verlust von 6 dB** – das entspricht einer **Halbierung der Amplitude**.
-
-Ohne Kenntnis der exakten atmosphärischen Bedingungen vor Ort ist eine präzise Reichweiten-Kalibrierung der Aufnahmen unmöglich.
 
 ---
 
@@ -235,12 +220,6 @@ Ohne Kenntnis der exakten atmosphärischen Bedingungen vor Ort ist eine präzise
 ## 🤝 Beitragen
 
 NEXUS ist ein **Work in Progress**. Feedback, Verbesserungsvorschläge und Beiträge sind willkommen!
-
-**Besonders gesucht:**
-- Feldtest-Partner (Frühjahr 2026)
-- Validierung der Alpha-Berechnung (Vergleich mit Referenzdaten)
-- Hardware-Optimierungen (Wetterfestigkeit, Stromverbrauch)
-- Software-Erweiterungen (automatische BatDetect2-Integration)
 
 **Kontakt:**
 - Blog: [paderbats.blogspot.com](https://paderbats.blogspot.com/)
@@ -273,10 +252,8 @@ Wenn Du NEXUS in wissenschaftlichen Arbeiten verwendest, bitte zitiere:
 
 ```
 Roth, J. (2026). NEXUS: Mikroklima-integriertes Fledermaus-Monitoring System.
-GitHub Repository: https://github.com/scanjack/NEXUS_DIY_Sensorik
+GitHub Repository: [https://github.com/scanjack/NEXUS_DIY_Sensorik](https://github.com/scanjack/NEXUS_DIY_Sensorik)
 ```
-
-*(DOI folgt nach Zenodo-Upload)*
 
 ---
 
