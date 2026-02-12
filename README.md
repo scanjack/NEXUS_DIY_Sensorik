@@ -172,18 +172,20 @@ NEXUS_DIY_Sensorik/
 
 ## 📖 Wissenschaftliche Grundlage
 
-### ISO 9613-1: Acoustics - Attenuation of sound during propagation outdoors
+### ISO 9613-1: Dämpfung von Schall bei der Ausbreitung im Freien
 
-NEXUS implementiert die ISO 9613-1 Norm zur Berechnung der atmosphärischen Dämpfung von Schall. Dies ist kritisch für Fledermaus-Bioakustik, da:
+NEXUS implementiert die ISO 9613-1 Norm zur Berechnung der atmosphärischen Dämpfung von Schall. Dies ist kritisch für die Fledermaus-Bioakustik, da:
 
-- Fledermausrufe im Ultraschall-Bereich (20–110 kHz) liegen
-- Dämpfung exponentiell mit Frequenz steigt
-- Temperatur, Luftfeuchtigkeit und Luftdruck die Dämpfung beeinflussen
-- Detektionsreichweite artspezifisch variiert
+* **Ultraschallrufe (20–110 kHz)** extrem stark gedämpft werden.
+* **Temperatur, Luftfeuchtigkeit und Luftdruck** die Dämpfung exponentiell beeinflussen.
+* **Detektionsreichweiten** artspezifisch variieren und ohne Korrektur nicht vergleichbar sind.
 
-**Beispiel:** Ein Ruf von *Pipistrellus pipistrellus* (55 kHz) wird bei 15°C und 60% rH um ~0.6 dB/m gedämpft. Nach 10 Metern sind das bereits **6 dB Verlust** → Halbierung der Amplitude.
+👉 **[Hier findest du die ausführliche wissenschaftliche Erklärung zur ISO 9613-1 im NEXUS-Projekt](docs/iso-9613-1.md)**
 
-Ohne Kenntnis der exakten atmosphärischen Bedingungen ist keine präzise Reichweiten-Kalibrierung möglich.
+**Praxis-Beispiel:**
+Ein Ruf von *Pipistrellus pipistrellus* (55 kHz) wird bei 15°C und 60% rH um ca. **0,6 dB/m** gedämpft. Nach nur 10 Metern bedeutet das bereits einen **Verlust von 6 dB** – das entspricht einer **Halbierung der Amplitude**.
+
+Ohne Kenntnis der exakten atmosphärischen Bedingungen vor Ort ist eine präzise Reichweiten-Kalibrierung der Aufnahmen unmöglich.
 
 ---
 
