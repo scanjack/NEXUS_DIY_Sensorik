@@ -39,6 +39,7 @@
 #include <WiFi.h>
 #include <WebServer.h>
 #include <esp_task_wdt.h>
+#include "secrets.h"
 
 // --- RETRO HTML & CSS ---
 const char STYLE_CPC[] PROGMEM = R"=====(
@@ -64,8 +65,8 @@ let i=0; function s(){ if(i<lines.length){ document.getElementById('t').innerHTM
 </script></body></html>)=====";
 
 // --- HARDWARE CONFIG ---
-const char* ap_ssid = "NEXUS_Base";
-const char* ap_pass = "12345678";
+const char* ssid = SECRET_SSID;
+const char* password = SECRET_PASS;
 WebServer server(80);
 
 #define PIN_WIND_DIR D0 
@@ -170,7 +171,7 @@ void setup() {
   pinMode(PIN_WIND_SPD, INPUT_PULLUP); attachInterrupt(digitalPinToInterrupt(PIN_WIND_SPD), countWind, FALLING);
   pinMode(PIN_RAIN, INPUT_PULLUP); attachInterrupt(digitalPinToInterrupt(PIN_RAIN), countRain, FALLING);
 
-  WiFi.softAP(ap_ssid, ap_pass);
+  WiFi.softAP(SECRET_SSID, SECRET_PASS);
   server.on("/", [](){ server.send(200, "text/html", boot_page); });
   server.on("/interface", [](){ server.send(200, "text/html", getHTML()); });
   server.on("/data", [](){
